@@ -66,7 +66,8 @@ public class Store {
 
     @Override
     public String toString() {
-        return "Store [buckets=" + flowerBuckets.size() +
-                ", total_value=" + getTotalInventoryValue() + "]";
+        return "Store [buckets=" + flowerBuckets.size()
+                + ", total_value=" + getTotalInventoryValue()
+                + "]";
     }
 }

@@ -6,9 +6,12 @@ public class StoreDemo {
     public static void main(String[] args) {
         Store store = new Store();
 
-        FlowerSpecs roseSpecs = new FlowerSpecs(FlowerColor.RED, FlowerType.ROSE);
-        FlowerSpecs tulipSpecs = new FlowerSpecs(FlowerColor.BLUE, FlowerType.TULIP);
-        FlowerSpecs chamomileSpecs = new FlowerSpecs(FlowerColor.GREEN, FlowerType.CHAMOMILE);
+        FlowerSpecs roseSpecs = new FlowerSpecs(FlowerColor.RED,
+                FlowerType.ROSE);
+        FlowerSpecs tulipSpecs = new FlowerSpecs(FlowerColor.BLUE,
+                FlowerType.TULIP);
+        FlowerSpecs chamomileSpecs = new FlowerSpecs(FlowerColor.GREEN,
+                FlowerType.CHAMOMILE);
 
         Flower redRose = new Flower(10.5, 25.0, roseSpecs);
         Flower blueTulip = new Flower(8.0, 15.0, tulipSpecs);
@@ -18,24 +21,27 @@ public class StoreDemo {
         FlowerPack tulipPack = new FlowerPack(blueTulip, 3);
         FlowerPack chamomilePack = new FlowerPack(greenChamomile, 8);
 
-        FlowerBucket bucket1 = new FlowerBucket();
-        bucket1.addFlowerPack(rosePack);
-        bucket1.addFlowerPack(tulipPack);
+        FlowerBucket bucketOne = new FlowerBucket();
+        bucketOne.addFlowerPack(rosePack);
+        bucketOne.addFlowerPack(tulipPack);
 
-        FlowerBucket bucket2 = new FlowerBucket();
-        bucket2.addFlowerPack(chamomilePack);
+        FlowerBucket bucketTwo = new FlowerBucket();
+        bucketTwo.addFlowerPack(chamomilePack);
 
-        FlowerBucket bucket3 = new FlowerBucket();
-        bucket3.addFlowerPack(rosePack);
+        FlowerBucket bucketThree = new FlowerBucket();
+        bucketThree.addFlowerPack(rosePack);
 
-        store.addFlowerBucket(bucket1);
-        store.addFlowerBucket(bucket2);
-        store.addFlowerBucket(bucket3);
+        store.addFlowerBucket(bucketOne);
+        store.addFlowerBucket(bucketTwo);
+        store.addFlowerBucket(bucketThree);
 
         System.out.println("=== Store Demo ===");
-        System.out.println("Total buckets in store: " + store.getBucketCount());
-        System.out.println("Total inventory value: $" + store.getTotalInventoryValue());
-        System.out.println("Store info: " + store.toString());
+        System.out.println("Total buckets in store: "
+                + store.getBucketCount());
+        System.out.println("Total inventory value: $"
+                + store.getTotalInventoryValue());
+        System.out.println("Store info: "
+                + store.toString());
 
         System.out.println("\n=== Searching for roses ===");
         List<FlowerBucket> roseBuckets = store.search(roseSpecs);
@@ -46,7 +52,7 @@ public class StoreDemo {
         System.out.println("Found " + tulipBuckets.size() + " buckets with tulips");
 
         System.out.println("\n=== Removing a bucket ===");
-        boolean removed = store.removeFlowerBucket(bucket2);
+        boolean removed = store.removeFlowerBucket(bucketTwo);
         System.out.println("Bucket removed: " + removed);
         System.out.println("Remaining buckets: " + store.getBucketCount());
     }

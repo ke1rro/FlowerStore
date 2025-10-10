@@ -21,9 +21,11 @@ public class FlowerBucketTest {
     public void testPrice() {
         double price = 10.0;
         int quantity = RANDOM_GENERATOR.nextInt(MAX_QUANTITY) + 1;
-        Flower flower = new Flower(0, price, new FlowerSpecs(FlowerColor.RED, FlowerType.ROSE));
+        Flower flower = new Flower(0, price,
+                new FlowerSpecs(FlowerColor.RED, FlowerType.ROSE));
         FlowerPack flowerPack = new FlowerPack(flower, quantity);
         flowerBucket.addFlowerPack(flowerPack);
-        Assertions.assertEquals(price * quantity, flowerBucket.getPrice(), 0.01);
+        Assertions.assertEquals(price * quantity,
+                flowerBucket.getPrice(), 0.01);
     }
 }
