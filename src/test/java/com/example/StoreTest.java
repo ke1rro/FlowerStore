@@ -59,18 +59,18 @@ public class StoreTest {
         Flower rose = new Flower(10.0, 25.0, roseSpecs);
         Flower tulip = new Flower(8.0, 15.0, tulipSpecs);
 
-        FlowerBucket bucket1 = new FlowerBucket();
-        bucket1.addFlowerPack(new FlowerPack(rose, 2));
+        FlowerBucket bucketOne = new FlowerBucket();
+        bucketOne.addFlowerPack(new FlowerPack(rose, 2));
 
-        FlowerBucket bucket2 = new FlowerBucket();
-        bucket2.addFlowerPack(new FlowerPack(tulip, 3));
+        FlowerBucket bucketTwo = new FlowerBucket();
+        bucketTwo.addFlowerPack(new FlowerPack(tulip, 3));
 
-        FlowerBucket bucket3 = new FlowerBucket();
-        bucket3.addFlowerPack(new FlowerPack(rose, 1));
+        FlowerBucket bucketThree = new FlowerBucket();
+        bucketThree.addFlowerPack(new FlowerPack(rose, 1));
 
-        store.addFlowerBucket(bucket1);
-        store.addFlowerBucket(bucket2);
-        store.addFlowerBucket(bucket3);
+        store.addFlowerBucket(bucketOne);
+        store.addFlowerBucket(bucketTwo);
+        store.addFlowerBucket(bucketThree);
 
         var roseBuckets = store.search(roseSpecs);
         assert roseBuckets.size() == 2 : "Should find 2 buckets with roses";
@@ -103,8 +103,8 @@ public class StoreTest {
 
         store.addFlowerBucket(bucketOne);
         store.addFlowerBucket(bucketTwo);
-
-        assert store.getTotalInventoryValue() == 150.0 : "Total value should be 150.0";
+        String message = "Total value should be 150.0";
+        assert store.getTotalInventoryValue() == 150.0 : message;
 
         System.out.println("Price calculations test passed");
     }

@@ -45,11 +45,13 @@ public class StoreDemo {
 
         System.out.println("\n=== Searching for roses ===");
         List<FlowerBucket> roseBuckets = store.search(roseSpecs);
-        System.out.println("Found " + roseBuckets.size() + " buckets with roses");
+        System.out.println("Found " + roseBuckets.size()
+                + " buckets with roses");
 
         System.out.println("\n=== Searching for tulips ===");
         List<FlowerBucket> tulipBuckets = store.search(tulipSpecs);
-        System.out.println("Found " + tulipBuckets.size() + " buckets with tulips");
+        System.out.println("Found " + tulipBuckets.size()
+                + " buckets with tulips");
 
         System.out.println("\n=== Removing a bucket ===");
         boolean removed = store.removeFlowerBucket(bucketTwo);

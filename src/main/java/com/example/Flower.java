@@ -13,6 +13,12 @@ public class Flower {
     public Flower() {
     }
 
+    public Flower(Flower flower) {
+        sepallength = flower.sepallength;
+        price = flower.price;
+        specs = flower.getSpecs();
+    }
+
     public Flower(double sepallength, double price, FlowerSpecs specs) {
         this.sepallength = sepallength;
         this.price = price;
@@ -25,12 +31,6 @@ public class Flower {
 
     public void setType(FlowerType type) {
         specs.setType(type);
-    }
-
-    public Flower(Flower flower) {
-        sepallength = flower.sepallength;
-        price = flower.price;
-        specs = flower.getSpecs();
     }
 
     public FlowerColor getColor() {
