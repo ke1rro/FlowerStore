@@ -1,7 +1,5 @@
 package com.example;
 
-import com.example.Flower;
-
 import lombok.Getter;
 
 @Getter
