@@ -21,6 +21,26 @@ public class FlowerBucket {
         return price;
     }
 
+    public List<FlowerPack> getFlowerPacks() {
+        if (flowerPacks == null) {
+            return new ArrayList<>();
+        }
+        return new ArrayList<>(flowerPacks);
+    }
+
+    public boolean containsFlowerWithSpecs(FlowerSpecs specs) {
+        if (flowerPacks == null) {
+            return false;
+        }
+
+        for (FlowerPack pack : flowerPacks) {
+            if (pack.matchesSpecs(specs)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         StringBuilder allFlowers = new StringBuilder();
