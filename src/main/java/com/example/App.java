@@ -1,11 +1,10 @@
 package com.example;
 
-/**
- * Hello world!
- *
- */
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Flower tulip = new Flower(190, 12, FlowerColor.GREEN, FlowerType.TULIP);
+        FlowerPack tulips = new FlowerPack(tulip, 4);
+
+        System.out.println(tulips.toString());
     }
 }

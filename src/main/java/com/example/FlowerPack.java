@@ -15,4 +15,9 @@ public class FlowerPack {
     public double getPrice() {
         return count * flower.getPrice();
     }
+
+    @Override
+    public String toString() {
+        return flower.toString();
+    }
 }

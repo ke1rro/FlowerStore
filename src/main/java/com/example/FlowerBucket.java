@@ -20,4 +20,13 @@ public class FlowerBucket {
         }
         return price;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder allFlowers = new StringBuilder();
+        for (FlowerPack flowerPack : flowerPacks) {
+            allFlowers.append(flowerPack.toString());
+        }
+        return allFlowers.toString();
+    }
 }
