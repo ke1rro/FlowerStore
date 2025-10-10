@@ -22,7 +22,9 @@ public class Flower {
 
     @Override
     public String toString() {
-        return "Flower [sepallength=" + sepallength + ", price=" + price + ", color=" + color + ", type=" + type + "]";
+        return ("Flower [sepallength=" + sepallength
+                + ", price="
+                + price + ", color=" + color + ", type=" + type + "]");
     }
 
 }
