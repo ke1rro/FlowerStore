@@ -19,4 +19,10 @@ public class Flower {
         price = flower.price;
         type = flower.type;
     }
+
+    @Override
+    public String toString() {
+        return "Flower [sepallength=" + sepallength + ", price=" + price + ", color=" + color + ", type=" + type + "]";
+    }
+
 }
