@@ -1,30 +1,52 @@
 package com.example;
 
-import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.Getter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 public class Flower {
     private double sepallength;
     private double price;
-    private FlowerColor color;
-    private FlowerType type;
+    private FlowerSpecs specs;
+
+    public Flower() {
+    }
+
+    public Flower(double sepallength, double price, FlowerSpecs specs) {
+        this.sepallength = sepallength;
+        this.price = price;
+        this.specs = specs;
+    }
+
+    public void setColor(FlowerColor color) {
+        specs.setColor(color);
+    }
+
+    public void setType(FlowerType type) {
+        specs.setType(type);
+    }
 
     public Flower(Flower flower) {
-        color = flower.color;
         sepallength = flower.sepallength;
         price = flower.price;
-        type = flower.type;
+        specs = flower.getSpecs();
+    }
+
+    public FlowerColor getColor() {
+        return specs.getColor();
+    }
+
+    public FlowerSpecs getSpecs() {
+        return specs;
     }
 
     @Override
     public String toString() {
         return ("Flower [sepallength=" + sepallength
                 + ", price="
-                + price + ", color=" + color + ", type=" + type + "]");
+                + price + ", color=" + specs.getColor()
+                + ", type=" + specs.getType() + "]");
     }
 
 }
